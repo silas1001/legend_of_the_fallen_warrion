@@ -1432,10 +1432,35 @@ function changeDifficulty(type, rebirth) {
         CreateMonsterHtml();
         quest();
     };
-    var currentDifficulty = 'Current Difficulty: <strong>' + player.properties.difficulty + "</strong><br /> Monster strength: " + monsterList.monster001.difficultyMultiplier() * 100 + "%" + '<br /> ';
+    var lv="",nd="";
+    if(player.properties.difficulty == "Mortal"){
+        nd="凡人";
+    }else if(player.properties.difficulty == "Ageless"){
+        nd="不老";
+    }else if(player.properties.difficulty == "Hero"){
+        nd="英雄";
+    }else if(player.properties.difficulty == "Immortal"){
+        nd="神仙";
+    }else if(player.properties.difficulty == "Lich"){
+        nd="巫妖";
+    }else if(player.properties.difficulty == "Legend"){
+        nd="传奇";
+    }
+    var currentDifficulty = '当前难度：<strong>' + nd + "</strong><br /> 怪物强度： " + monsterList.monster001.difficultyMultiplier() * 100 + "%" + '<br />装备掉率：<br /> ';
     for (var i = itemRarity.length - 1; i >= 0; i--) {
+        if(itemRarity[i].type == "Common"){
+        lv="普通";
+    }else if(itemRarity[i].type == "Uncommon"){
+        lv="稀有";
+    }else if(itemRarity[i].type == "Rare"){
+        lv="罕见";
+    }else if(itemRarity[i].type == "Epic"){
+        lv="史诗";
+    }else if(itemRarity[i].type == "Legendary"){
+        lv="传奇";
+    }
        
-        currentDifficulty += '<strong><font color="' + itemRarity[i].color + '">' + itemRarity[i].type + ": " + '</font></strong>';
+        currentDifficulty += '<strong><font color="' + itemRarity[i].color + '">' + lv + ": " + '</font></strong>';
         var number = itemRarity[i].chance * player.properties.difficultyMultiplier;
         number.toString();
         if(Math.round(number) !== number) {

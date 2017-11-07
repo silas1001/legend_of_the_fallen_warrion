@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -67,10 +67,10 @@
                 <div id="raceDiv" style="display:none;">
                     <div class="raceText" id="raceText"></div>
                     <div id="sliderDivID" class="sliderDiv" style="display:none;">
-                        <label><input id="Adulthood" type="radio" name="raceAge" value="Adulthood" style="visibility: visible;" onclick="getAgeButton()" checked><span style="margin-left:20px;">Adulthood</span></label>
-                        <label><input id="Middle Age" type="radio" name="raceAge" value="Middle Age" style="visibility: visible;" onclick="getAgeButton()"><span style="margin-left:20px;">Middle Age</span></label>
-                        <label><input id="Old" type="radio" name="raceAge" value="Old" style="visibility: visible;" onclick="getAgeButton()"><span style="margin-left:20px;">Old</span></label>
-                        <label><input id="Venerable" type="radio" name="raceAge" value="Venerable" style="visibility: visible;" onclick="getAgeButton()"><span style="margin-left:20px;">Venerable</span></label>
+                        <label><input id="Adulthood" type="radio" name="raceAge" value="Adulthood" style="visibility: visible;" onclick="getAgeButton()" checked><span style="margin-left:20px;">成年</span></label>
+                        <label><input id="Middle Age" type="radio" name="raceAge" value="Middle Age" style="visibility: visible;" onclick="getAgeButton()"><span style="margin-left:20px;">中年</span></label>
+                        <label><input id="Old" type="radio" name="raceAge" value="Old" style="visibility: visible;" onclick="getAgeButton()"><span style="margin-left:20px;">老年</span></label>
+                        <label><input id="Venerable" type="radio" name="raceAge" value="Venerable" style="visibility: visible;" onclick="getAgeButton()"><span style="margin-left:20px;">可敬</span></label>
                     </div>
                     <div class="raceCreation" id="raceCreation"></div>
                 </div>
@@ -87,9 +87,9 @@
                             <div class="col-xs-10 col-xs-offset-1 c2">
                                 <div class="row">
                                     <ul class="nav nav-tabs">
-                                        <li class="active"><a href="#tab_mainStats" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Main Stats"></span>Stats</a></li>
-                                        <li><a href="#tab_SecondaryStats" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Secondary stats"></span>Secondary stats</a></li>
-                                        <li><a href="#tab_equippedItems" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Equipped Items"></span>Equipment</a></li>
+                                        <li class="active"><a href="#tab_mainStats" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Main Stats"></span>统计</a></li>
+                                        <li><a href="#tab_SecondaryStats" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Secondary stats"></span>次要统计</a></li>
+                                        <li><a href="#tab_equippedItems" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Equipped Items"></span>装备</a></li>
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_mainStats">
@@ -98,8 +98,8 @@
                                             </div>
                                             <div class="col-xs-10">
                                                 <div class="c3">
-                                                    <h4>Player Stats</h4>
-                                                    <h5 style="font-size:12px;">Ctrl/Alt + Click = 10 stats <br /> Shift + Click = 100 stats</h5>
+                                                    <h4>玩家统计</h4>
+                                                    <h5 style="font-size:12px;">Ctrl/Alt + 点击 = 10 stats <br /> Shift + Click = 100 stats</h5>
                                                 </div>
                                             </div>
                                             <div class="col-xs-12">
@@ -124,9 +124,9 @@
                                                 </div>
                                                 </div>
                                             <div class="col-xs-12 topBar">
-                                                <span data-toggle="tooltip" data-placement="top" title="Level" id="level">1</span>
+                                                <span data-toggle="tooltip" data-placement="top" title="等级" id="level">1</span>
                                                 (<span id="experience">0</span>/<span id="maxexperience">100</span>)
-                                                <img data-toggle="tooltip" data-placement="top" title="Gold" src="css/images/crown-coin.png" />
+                                                <img data-toggle="tooltip" data-placement="top" title="金子" src="css/images/crown-coin.png" />
                                                  <span id="gold">0</span>
                                             </div>
                                             <div class="c3">
@@ -163,18 +163,18 @@
                             </div>
                             <div class="col-xs-11">
                                 <ul class="nav nav-tabs">
-                                    <li class="active"><a href="#tab_mainBattle" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Battle">Battle</span></a></li>
+                                    <li class="active"><a href="#tab_mainBattle" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Battle">战斗</span></a></li>
                                     <li onclick="CreateInventoryWeaponHtml(); resetNewItemsNumberDisplay();">
                                         <a href="#tab_mainInventory" data-toggle="tab" style="width:120px;">
-                                            <span data-toggle="tooltip" data-placement="top" title="Inventory">Inventory</span>
+                                            <span data-toggle="tooltip" data-placement="top" title="Inventory">背包</span>
                                             <span id="newItems" style="position:absolute; top:0%;left:80%; color:red;"></span>
                                         </a>
                                     </li>
-                                    <li><a href="#tab_mainProfessions" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Professions"></span>Professions</a></li>
-                                    <li><a href="#tab_mainSkills" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Skills"></span>Skills</a></li>
-                                    <li><a href="#tab_mainShop" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Shop"></span>Shop</a></li>
-                                    <li><a href="#tab_mainStory" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Options"></span>Story</a></li>
-                                    <li><a href="#tab_mainOptions" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Options"></span>Options and Credits</a></li>
+                                    <li><a href="#tab_mainProfessions" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Professions"></span>职业</a></li>
+                                    <li><a href="#tab_mainSkills" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Skills"></span>技能</a></li>
+                                    <li><a href="#tab_mainShop" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Shop"></span>商店</a></li>
+                                    <li><a href="#tab_mainStory" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Options"></span>剧情</a></li>
+                                    <li><a href="#tab_mainOptions" data-toggle="tab"><span data-toggle="tooltip" data-placement="top" title="Options"></span>选项和积分</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -253,7 +253,7 @@
                             <div id="tab_mainShop" class="tab-pane unselectable c4 border marginBottom row">
 
                                 <div class="c3">
-                                    <h4>Shop</h4>
+                                    <h4>商店</h4>
                                 </div>
                                 <div id="shopTabs"></div>
 
@@ -263,11 +263,11 @@
                                     <div class="col-xs-12 marginTop marginBottom">
                                         <div class="c4">
                                             <ul class="nav nav-tabs borderBottom">
-                                                <li role="presentation" class="active"><a href="#tab_prologue" data-toggle="tab">Prologue</a></li>
-                                                <li role="presentation"><a href="#tab_varik" data-toggle="tab">Varik's Hideout</a></li>
-                                                <li role="presentation"><a href="#tab_forest" data-toggle="tab">Forest of Narus</a></li>
-                                                <li role="presentation"><a href="#tab_ozJotnar" data-toggle="tab">Oz Jotnar</a></li>
-                                                <li role="presentation"><a href="#tab_twistedMarrow" data-toggle="tab">Twisted Marrow</a></li>
+                                                <li role="presentation" class="active"><a href="#tab_prologue" data-toggle="tab">序幕</a></li>
+                                                <li role="presentation"><a href="#tab_varik" data-toggle="tab">瓦瑞克的末日</a></li>
+                                                <li role="presentation"><a href="#tab_forest" data-toggle="tab">纳鲁森林</a></li>
+                                                <li role="presentation"><a href="#tab_ozJotnar" data-toggle="tab">奥兹乔纳</a></li>
+                                                <li role="presentation"><a href="#tab_twistedMarrow" data-toggle="tab">扭曲的骨髓</a></li>
                                             </ul>
                                             <div class="tab-content">
 
@@ -335,12 +335,12 @@
                                             <div id="volumeSettings"></div>
                                             <div id="currentVolume">Current Volume: 10%</div><br />
                                             <div class="col-xs-12">
-                                                <button class="sell" onclick="changeDifficulty('Mortal')" data-toggle="tooltip" data-placement="top" title="Enemy Stats x 0.2">Mortal</button>
-                                                <button class="sell" onclick="changeDifficulty('Ageless')" data-toggle="tooltip" data-placement="top" title="Enemy Stats x 0.5">Ageless</button>
-                                                <button class="sell" onclick="changeDifficulty('Hero')" data-toggle="tooltip" data-placement="top" title="Enemy Stats x 1">Hero</button>
-                                                <button class="sell" onclick="changeDifficulty('Immortal')" data-toggle="tooltip" data-placement="top" title="Enemy Stats x 2">Immortal</button>
-                                                <button class="sell" onclick="changeDifficulty('Lich')" data-toggle="tooltip" data-placement="top" title="Enemy Stats x 3">Lich</button>
-                                                <button class="sell" onclick="changeDifficulty('Legend')" data-toggle="tooltip" data-placement="top" title="Enemy Stats x 5">Legend</button>
+                                                <button class="sell" onclick="changeDifficulty('Mortal')" data-toggle="tooltip" data-placement="top" title="Enemy Stats x 0.2">凡人</button>
+                                                <button class="sell" onclick="changeDifficulty('Ageless')" data-toggle="tooltip" data-placement="top" title="Enemy Stats x 0.5">不老</button>
+                                                <button class="sell" onclick="changeDifficulty('Hero')" data-toggle="tooltip" data-placement="top" title="Enemy Stats x 1">英雄</button>
+                                                <button class="sell" onclick="changeDifficulty('Immortal')" data-toggle="tooltip" data-placement="top" title="Enemy Stats x 2">神仙</button>
+                                                <button class="sell" onclick="changeDifficulty('Lich')" data-toggle="tooltip" data-placement="top" title="Enemy Stats x 3">巫妖</button>
+                                                <button class="sell" onclick="changeDifficulty('Legend')" data-toggle="tooltip" data-placement="top" title="Enemy Stats x 5">传说</button>
                                             </div>
                                             <div class="col-xs-12 c3">
                                                 <span id="gameDifficulty">

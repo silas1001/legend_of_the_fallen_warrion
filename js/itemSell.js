@@ -1,10 +1,10 @@
-﻿"use strict";
+"use strict";
 var total = 0;
 var inventoryId = [];
 function sellAllItems() {
     var canSell = false;
     if (checkBoxEpic === true || checkBoxLegendary === true) {
-        if (confirm("You are going to sell Epic and/or Legendary items, are you sure?") === true) {
+        if (confirm("你正在出售史诗或传奇物品，你真的确定吗？") === true) {
             canSell = true;
         }
         else {

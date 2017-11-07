@@ -22,7 +22,7 @@ function CreateWeaponSkillHtml() {
             html += '<div class="row">';
             html += '<div class="col-xs-12">';
             html += item.displayName + ' skill progress:<br />';
-            html += 'Level: ' + weaponStat.level + '<br />';
+            html += '等级: ' + weaponStat.level + '<br />';
             html += '<div class="progress">';
             html += '<div style="width: ' + player.properties[itemType3] + '%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar" id="' + item.type + "1" + '">';
             html += '<span id="' + item.type + '">' + player.properties[itemType3] + '%' + '</span></div></div>';
@@ -316,9 +316,9 @@ function checkBoxHtml() {
 
     html += '</div>';
     html += '<div class="centerText">';
-    html += '<strong>Sell all items by selected rarity(All tabs)</strong>';
+    html += '<strong>卖出稀有物品以下的所有物品（所有类型）</strong>';
     var sellAll = "sellAllItems();";
-    html += '<br /><button type="button" class="sell" onclick=' + sellAll + '>Sell all</button>';
+    html += '<br /><button type="button" class="sell" onclick=' + sellAll + '>全部卖出</button>';
     html += '</div>';
     html += '</div>';
     html += '</div>';
@@ -365,18 +365,18 @@ function CreateInventoryWeaponHtml() {
         };
         html += 'id="tab_' + InventoryItemTypes[j].type + '" style="height:400px;">';
         html += '<div class="row" id="' + "inventorySpace" + InventoryItemTypes[j].type + '"' + '>';
-        html += '<div class="c3" style="margin-bottom:10px;"><h4>Inventory</h4>';
+        html += '<div class="c3" style="margin-bottom:10px;"><h4>库存</h4>';
         if (InventoryItemTypes[j].type !== 'other') {
             html += '<div class="c3">Sort by:</div>';
             var sortItemValue = 'onclick="sortInventory' + "(" + "'Value'" + ")"
             var sortItemRarity = 'onclick="sortInventory' + "(" + "'Rarity'" + ")"
             var sortItemLevel = 'onclick="sortInventory' + "(" + "'iLvl'" + ")"
-            html += '<button type="button" ' + sortItemValue + '">Value</button>';
-            html += '<button type="button" ' + sortItemRarity + '">Rarity</button>';
-            html += '<button type="button" ' + sortItemLevel + '">Level</button>';
+            html += '<button type="button" ' + sortItemValue + '">属性值</button>';
+            html += '<button type="button" ' + sortItemRarity + '">稀有度</button>';
+            html += '<button type="button" ' + sortItemLevel + '">等级</button>';
             if (InventoryItemTypes[j].type === 'weapon') {
                 var sortItemDamage = 'onclick="sortInventory' + "(" + "'Damage'" + ")"
-                html += '<button type="button" ' + sortItemDamage + '">Damage</button>';
+                html += '<button type="button" ' + sortItemDamage + '">伤害</button>';
             };
         };
         html += '</div>';
@@ -562,7 +562,7 @@ function CreatePlayerSkillsHtml() {
             html += '<div class="col-xs-12">';
         };
         html += '<div class="col-xs-6">';
-        html += '<center><button class="btn btn-default btn-lg btn-block" onclick="collapseWell(' + "'passiveSkillTree_" + i + "'" + ", '" + j + "'" + ')" ><strong>Level ' + i + '</strong></button>';
+        html += '<center><button class="btn btn-default btn-lg btn-block" onclick="collapseWell(' + "'passiveSkillTree_" + i + "'" + ", '" + j + "'" + ')" ><strong>等级 ' + i + '</strong></button>';
         html += '</center>';
         if ($('#passiveSkillTree_' + i + ':hidden').length > 0) {
             html += '<div id="passiveSkillTree_' + i + '" class="' + j + '" style="display:none;"></div>';
@@ -660,10 +660,10 @@ function startingScreen() {
     var reset = "resetallSavesCheck();";
     var myAudio = document.getElementById('myAudioStart');
     html += '<div class="btn-group-vertical" role="group" aria-label="New game, load game">';
-    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + newGame + '">New Game</button>';
-    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + loadGame + '">Load</button>';
-    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + reset + '">Reset all saves</button>';
-    html += '<label><input type="checkbox" id="hardcoreMode" style ="visibility:visible; position:relative;" onclick="hardcoreModeCheck();">Hardcore Mode?</label>';
+    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + newGame + '">新游戏</button>';
+    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + loadGame + '">加载</button>';
+    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + reset + '">重玩</button>';
+    html += '<label><input type="checkbox" id="hardcoreMode" style ="visibility:visible; position:relative;" onclick="hardcoreModeCheck();">极限模式？</label>';
     html += '</div>';
     html += '<br />';
 
@@ -677,16 +677,30 @@ function selectDifficulty() {
     var html = "";
     var newGame = "newGameSlot();";
     var difficulty = ["Mortal", "Ageless", "Hero", "Immortal", "Lich", "Legend"];
-    html += '<div class="c3" style="font-size:large;"><strong>Select difficulty</strong></div>';
+    var nd="";
+    html += '<div class="c3" style="font-size:large;"><strong>选择难度</strong></div>';
     html += '<div class="btn-group-horizontal" role="group" aria-label="Choose difficulty">';
     for (var i = 0; i < difficulty.length; i++) {
-        html += '<button style="margin-left:5px;" class="btn btn-default btn-sm border" onclick="changeDifficulty(' + "'" + difficulty[i] + "'" + ')">' + difficulty[i] + '</button>';
+    if(difficulty[i] == "Mortal"){
+        nd="凡人";
+    }else if(difficulty[i] == "Ageless"){
+        nd="不老";
+    }else if(difficulty[i] == "Hero"){
+        nd="英雄";
+    }else if(difficulty[i] == "Immortal"){
+        nd="神仙";
+    }else if(difficulty[i] == "Lich"){
+        nd="巫妖";
+    }else if(difficulty[i] == "Legend"){
+        nd="传奇";
+    }
+        html += '<button style="margin-left:5px;" class="btn btn-default btn-sm border" onclick="changeDifficulty(' + "'" + difficulty[i] + "'" + ')" title="'+ nd +'">' + nd + '</button>';
     }
     html += '</div>';
     html += '<div id="currentDifficulty">' + changeDifficulty() + '</div>';
     html += '<div class="btn-group-horizontal" role="group" aria-label="New game, load game">';
-    html += '<button type="button" class="btn btn-default border" onclick="' + newGame + '">NewGame</button><br /><br />';
-    html += '<button type="button" class="btn btn-default border" onclick="backToStartingScreen()">Go Back</button>';
+    html += '<button type="button" class="btn btn-default border" onclick="' + newGame + '">新游戏</button><br /><br />';
+    html += '<button type="button" class="btn btn-default border" onclick="backToStartingScreen()">返回</button>';
     html += '</div>';
     document.getElementById("buttonDiv").innerHTML = html;
 }
@@ -713,45 +727,45 @@ function newGameSlot() {
             pageReload();
         }
         else {
-            displayInfo0 = "Current save: Level - " + saveInfo0.playerProperties.level + ' Race: ' + saveInfo0.playerProperties.heroRace;
+            displayInfo0 = "当前存档：等级 - " + saveInfo0.playerProperties.level + ' Race: ' + saveInfo0.playerProperties.heroRace;
             if (saveInfo0.playerProperties.hardcoreMode === true) {
                 displayInfo0 += " <strong>Hardcore</strong>"
             };
         }
     }
     else {
-        displayInfo0 = "Empty Slot";
+        displayInfo0 = "空槽";
     }
 
     if (localStorage['EncodedSave1']) {
         saveInfo1 = JSON.parse(atob(localStorage['EncodedSave1']));
-        displayInfo = "Current save: Level - " + saveInfo1.playerProperties.level + ' Race: ' + saveInfo1.playerProperties.heroRace;
+        displayInfo = "当前存档：等级 - " + saveInfo1.playerProperties.level + ' 种族: ' + saveInfo1.playerProperties.heroRace;
         if (saveInfo1.playerProperties.hardcoreMode === true) {
             displayInfo += " <strong>Hardcore</strong>"
         };
     }
     else {
-        displayInfo = "Empty Slot";
+        displayInfo = "空槽";
     }
     if (localStorage['EncodedSave2']) {
         saveInfo2 = JSON.parse(atob(localStorage['EncodedSave2']));
-        displayInfo2 = "Current save: Level - " + saveInfo2.playerProperties.level + ' Race: ' + saveInfo2.playerProperties.heroRace;
+        displayInfo2 = "当前存档：等级 - " + saveInfo2.playerProperties.level + ' 种族: ' + saveInfo2.playerProperties.heroRace;
         if (saveInfo2.playerProperties.hardcoreMode === true) {
             displayInfo2 += " <strong>Hardcore</strong>"
         };
     }
     else {
-        displayInfo2 = "Empty Slot";
+        displayInfo2 = "空槽";
     }
     if (localStorage['EncodedSave3']) {
         saveInfo3 = JSON.parse(atob(localStorage['EncodedSave3']));
-        displayInfo3 = "Current save: Level - " + saveInfo3.playerProperties.level + ' Race: ' + saveInfo3.playerProperties.heroRace;
+        displayInfo3 = "当前存档：等级 - " + saveInfo3.playerProperties.level + ' 种族: ' + saveInfo3.playerProperties.heroRace;
         if (saveInfo3.playerProperties.hardcoreMode === true) {
             displayInfo3 += " <strong>Hardcore</strong>"
         };
     }
     else {
-        displayInfo3 = "Empty Slot";
+        displayInfo3 = "空槽";
     }
 
     html += '<div class="row">';
@@ -759,19 +773,19 @@ function newGameSlot() {
     html += '<div class="btn-group-vertical" role="group" aria-label="New game, load game">';
     html += '<div class="row">';
     html += '<div class ="col-xs-12">';
-    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + newGameSlot1 + '">New game 1</button> ' + displayInfo;
+    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + newGameSlot1 + '">新游戏 1</button> ' + displayInfo;
     html += '</div>';
     html += '<div class ="col-xs-12">';
-    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + newGameSlot2 + '">New Game 2</button> ' + displayInfo2;
+    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + newGameSlot2 + '">新游戏 2</button> ' + displayInfo2;
     html += '</div>';
     html += '<div class ="col-xs-12">';
-    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + newGameSlot3 + '">New Game 3</button> ' + displayInfo3;
+    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + newGameSlot3 + '">新游戏 3</button> ' + displayInfo3;
     html += '</div>';
     html += '<div class ="col-xs-12">';
-    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + newGameSlot0 + '">New game 0</button> ' + displayInfo0;
+    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + newGameSlot0 + '">新游戏 0</button> ' + displayInfo0;
     html += '</div>';
     html += '</div></div>';
-    html += '<button type="button" class="btn btn-default border startBackButtonMargin" onclick="backToStartingScreen()">Go Back</button>';
+    html += '<button type="button" class="btn btn-default border startBackButtonMargin" onclick="backToStartingScreen()">返回</button>';
     html += '</div></div>';
     
     document.getElementById("raceCreation").innerHTML = html;
@@ -805,17 +819,17 @@ function loadGameSlot() {
         };
     }
     else {
-        displayInfo0 = "Empty Slot";
+        displayInfo0 = "空槽";
     };
     if (localStorage['EncodedSave1']) {
         saveInfo1 = JSON.parse(atob(localStorage['EncodedSave1']));
         displayInfo = "Level - " + saveInfo1.playerProperties.level + ' Race: ' + saveInfo1.playerProperties.heroRace;
         if (saveInfo1.playerProperties.hardcoreMode === true) {
-            displayInfo += " <strong>Hardcore</strong>"
+            displayInfo += " <strong></strong>"
         };
     }
     else {
-        displayInfo = "Empty Slot";
+        displayInfo = "空槽";
     };
     if (localStorage['EncodedSave2']) {
         saveInfo2 = JSON.parse(atob(localStorage['EncodedSave2']));
@@ -825,7 +839,7 @@ function loadGameSlot() {
         };
     }
     else {
-        displayInfo2 = "Empty Slot";
+        displayInfo2 = "空槽";
     };
     if (localStorage['EncodedSave3']) {
         saveInfo3 = JSON.parse(atob(localStorage['EncodedSave3']));
@@ -835,7 +849,7 @@ function loadGameSlot() {
         };
     }
     else {
-        displayInfo3 = "Empty Slot";
+        displayInfo3 = "空槽";
     };
 
     html += '<div class="row">';
@@ -843,19 +857,19 @@ function loadGameSlot() {
     html += '<div class="btn-group-vertical" role="group" aria-label="New game, load game">';
     html += '<div class="row">';
     html += '<div class ="col-xs-12">';
-    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + loadGameSlot1 + '">Load game 1</button> ' + displayInfo;
+    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + loadGameSlot1 + '">加载游戏 1</button> ' + displayInfo;
     html += '</div>';
     html += '<div class ="col-xs-12">';
-    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + loadGameSlot2 + '">Load Game 2</button> ' + displayInfo2;
+    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + loadGameSlot2 + '">加载游戏 2</button> ' + displayInfo2;
     html += '</div>';
     html += '<div class ="col-xs-12">';
-    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + loadGameSlot3 + '">Load Game 3</button> ' + displayInfo3;
+    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + loadGameSlot3 + '">加载游戏 3</button> ' + displayInfo3;
     html += '</div>';
     html += '<div class ="col-xs-12">';
-    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + loadGameSlot0 + '">Load Game 0</button> ' + displayInfo0;
+    html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" onclick="' + loadGameSlot0 + '">加载游戏 0</button> ' + displayInfo0;
     html += '</div>';
     html += '</div></div>';
-    html += '<button type="button" class="btn btn-default border startBackButtonMargin" onclick="backToStartingScreen()">Go Back</button>';
+    html += '<button type="button" class="btn btn-default border startBackButtonMargin" onclick="backToStartingScreen()">返回</button>';
     html +='</div></div>';
 
     document.getElementById("raceCreation").innerHTML = html;
@@ -906,7 +920,7 @@ function characterCreationHtml() {
         var html2 = '';
         html2 += '<div class="row">';
         html2 += '<div class="col-xs-6 col-xs-offset-3">';
-        html2 += 'Press ' + '<p class="glyphicon glyphicon-info-sign" style="color:black"></p>' + ' for more info about a class.';
+        html2 += '点击 ' + '<p class="glyphicon glyphicon-info-sign" style="color:black"></p>' + ' 查看更多信息。';
         html2 += '</div></div>';
         html += '<div class="row">';
         html += '<div class="col-xs-12 col-xs-offset-1">';
@@ -917,19 +931,53 @@ function characterCreationHtml() {
                 var onclickevent = "changeRace('" + heroRace.name + "', '" + hero + "');";
                 html += '<div class="col-xs-6 col-xs-offset-2">';
                 html += '<img src="images/races/' + heroRace.image() + '.png">';
-                html += heroRace.name + " ";
+                var cnname="";
+                if(heroRace.name == "Human"){
+        cnname="人类";
+    }else if(heroRace.name == "Half Elf"){
+        cnname="半精灵";
+    }else if(heroRace.name == "Dwarf"){
+        cnname="矮人";
+    }else if(heroRace.name == "Orc"){
+        cnname="兽人";
+    }else if(heroRace.name == "Elf"){
+        cnname="地精";
+    }else if(heroRace.name == "Halfing"){
+        cnname="矮人";
+    }else if(heroRace.name == "Sylph"){
+        cnname="精灵";
+    }else if(heroRace.name == "Giant"){
+        cnname="巨人";
+    }
+                html += cnname + " ";
                 html += '<a class="tooltips">' + '<p class="glyphicon glyphicon-info-sign" style="color:black"></p>' +
                     '<span style="width:350px; left: 110px; bottom:-30px; text-align:left;">' +
                     '<div class="row">' +
                     '<div class="col-xs-10 col-xs-offset-1">' +
-                    heroRace.name +
+                    cnname +
                     '</div></div>' +
                     '<div class="row">' +
                     '<div class="col-xs-5" style="padding-left:46px;">';
                 for (var stat in heroRace) {
                     if (heroRace.hasOwnProperty(stat)) {
                         if ('strength, endurance, agility, dexterity, wisdom, intelligence, luck'.indexOf(stat) !== -1) {
-                            html += stat.substring(0, 3).capitalizeFirstLetter() + ': ';
+                            var shuxing="";
+                            if(stat.substring(0, 3).capitalizeFirstLetter() == "Str"){
+                                shuxing="力量";
+                            }else if(stat.substring(0, 3).capitalizeFirstLetter() == "End"){
+                                shuxing="耐力";
+                            }else if(stat.substring(0, 3).capitalizeFirstLetter() == "Agi"){
+                                shuxing="敏捷";
+                            }else if(stat.substring(0, 3).capitalizeFirstLetter() == "Dex"){
+                                shuxing="闪避";
+                            }else if(stat.substring(0, 3).capitalizeFirstLetter() == "Wis"){
+                                shuxing="智慧";
+                            }else if(stat.substring(0, 3).capitalizeFirstLetter() == "Int"){
+                                shuxing="智力";
+                            }else if(stat.substring(0, 3).capitalizeFirstLetter() == "Luc"){
+                                shuxing="幸运";
+                            }
+                            html += shuxing + ': ';
                             for (var i = 0; i < heroRace[stat](); i++) {
                                 if (heroRace[stat]() >= 6) {
                                     html += '<font color="orange">+</font>';
@@ -947,17 +995,46 @@ function characterCreationHtml() {
                 };
                 html += '</div>';
                 html += '<div class="col-xs-7">';
-                html += 'Bonuses:<br />';
+                html += '种族加成:<br />';
                 for (stat in heroRace) { // var stat is being declared already, so this one is without a 'var'...
                     if (heroRace.hasOwnProperty(stat)) {
                         if ('raceAllStats, raceGoldDrop, raceExpRate, raceDropRate, raceEvasion, raceDamage, raceHealth, raceAccuracy, raceDefense, raceManaRegen, raceMaxMana, raceCriticalChance, raceSpellPower'.indexOf(stat) != -1) {
                             var string = stat.substring('race'.length);
                             if (stat === "raceAccuracy" && heroRace[stat]() > 111) {
-                                html += 'Never Miss<br />';
+                                html += '从不打偏<br />';
                             } else if (stat === "raceEvasion" && heroRace[stat]() === "Can't evade") {
-                                html += "Can't Evade";
+                                html += "不能回避";
                             } else {
-                                html += string.replace(/([a-z])([A-Z])/g, '$1 $2') + ': '; //remove part of the string which start from lower case "race", and add space before each upper case, changing raceMaxMana to "Max Mana"
+                                console.log(string.replace(/([a-z])([A-Z])/g, '$1 $2'))
+                                var jc="";
+                                if(string.replace(/([a-z])([A-Z])/g, '$1 $2') == "All Stats"){
+                                    jc="所有状态";
+                                }else if(string.replace(/([a-z])([A-Z])/g, '$1 $2') == "Exp Rate"){
+                                     jc="经验加成";
+                                }else if(string.replace(/([a-z])([A-Z])/g, '$1 $2') == "Drop Rate"){
+                                     jc="装备掉率";
+                                }else if(string.replace(/([a-z])([A-Z])/g, '$1 $2') == "Gold Drop"){
+                                     jc="金币掉落";
+                                }else if(string.replace(/([a-z])([A-Z])/g, '$1 $2') == "Evasion"){
+                                     jc="闪避";
+                                }else if(string.replace(/([a-z])([A-Z])/g, '$1 $2') == "Defense"){
+                                     jc="防御";
+                                }else if(string.replace(/([a-z])([A-Z])/g, '$1 $2') == "Damage"){
+                                     jc="伤害";
+                                }else if(string.replace(/([a-z])([A-Z])/g, '$1 $2') == "Health"){
+                                     jc="生命";
+                                }else if(string.replace(/([a-z])([A-Z])/g, '$1 $2') == "Critical Chance"){
+                                     jc="暴击几率";
+                                }else if(string.replace(/([a-z])([A-Z])/g, '$1 $2') == "Mana Regen"){
+                                     jc="法力回复";
+                                }else if(string.replace(/([a-z])([A-Z])/g, '$1 $2') == "Max Mana"){
+                                     jc="最大法力";
+                                }else if(string.replace(/([a-z])([A-Z])/g, '$1 $2') == "Spell Power"){
+                                     jc="法术强度";
+                                }else if(string.replace(/([a-z])([A-Z])/g, '$1 $2') == "Accuracy"){
+                                     jc="命中率";
+                                }
+                                html += jc + ': '; //remove part of the string which start from lower case "race", and add space before each upper case, changing raceMaxMana to "Max Mana"
                                 if (heroRace[stat]() > 0) {
                                     html += '+';
                                 };
@@ -976,14 +1053,14 @@ function characterCreationHtml() {
                     '</span>' + '</a>';
                 html += '</div>';
                 html += '<div class="col-xs-2">';
-                html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" class="' + heroRace.name + '" onclick="' + onclickevent + '">Choose</button>' //changeRace function ._.
+                html += '<button type="button" style="margin-bottom:5px;" class="btn btn-default border" class="' + heroRace.name + '" onclick="' + onclickevent + '">选择</button>' //changeRace function ._.
                 html += '</div>';
 
             };
         };
         html += '<div class="row">'
         html += '<div class="col-xs-2 col-xs-offset-5">';
-        html += '<button type="button" class="btn btn-default border startBackButtonMargin" onclick="newGameSlot()">Go Back</button>';
+        html += '<button type="button" class="btn btn-default border startBackButtonMargin" onclick="newGameSlot()">返回</button>';
         html += '</div>';
         html += '</div>';
         html += '</div>';
@@ -1435,7 +1512,7 @@ function displayShopItems(type) {
     html += '</div>';
     html += '<div class="row">';
     html += '<div class="col-xs-12">';
-    html += '<div class="c3"><h3>Item Shop</h3></div></div>';
+    html += '<div class="c3"><h3>道具商店</h3></div></div>';
     for (var i = 0; i < itemTypeDisplay.length; i++) {
         var itemDisplay = itemTypeDisplay[i];
         html += '<div class="col-xs-2 inventoryBlock ' + itemDisplay.itemRarity + '">';

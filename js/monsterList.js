@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 function MakeMonsterList() {
     var newMonster = function (level, name, displayName, id, area) {
         this.difficultyMultiplier = function () {

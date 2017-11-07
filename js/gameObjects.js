@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 var itemToCraft = [
 {
     weapon: [
@@ -727,7 +727,7 @@ var itemAccessorySubType = [
         chance: 32,
         lore: [
             {
-                text: '\"A very small maple charm with a fiddle and a ring on the front and nothing on the back.\"'
+                text: '“一个非常小的枫木魅力，前面有一个小提琴和一个戒指，后面没有任何东西。”'
             },
             {
                 text: '\"A large bone charm with a person and a bat on the front and an ear of corn and a fist on the back.\"'
@@ -1932,28 +1932,28 @@ giant.raceAccuracy = function () {
     return -25;
 };
 human.lore = function() {
-    return '\"Humans possess exceptional drive and a great capacity to endure and expand, and as such are currently the dominant race in the world.\"';
+    return '“人类拥有卓越的驱动力和很强的忍耐力和扩张能力，因此是目前世界上占主导地位的种族”。';
 };
 halfElf.lore = function() {
-    return '\"Elves have long drawn the covetous gazes of other races. Their generous lifespans, magical affinity, and inherent grace each contribute to the admiration or bitter envy of their neighbors.\"'
+    return '“精灵们长期以来对其他种族的贪婪注视，他们慷慨的生命力，神奇的亲和力和固有的优雅，每一个都引起了邻居的钦佩和嫉妒。”'
 };
 dwarf.lore = function() {
-    return '\"Dwarves are a stoic but stern race, ensconced in cities carved from the hearts of mountains and fiercely determined to repel the depredations of savage races like orcs and goblins.\"';
+    return '“矮人是一个沉着而严峻的种族，隐藏在山脉雕刻的城市里，激烈地决心击退兽人和妖精等野蛮种族的掠夺。”';
 };
 orc.lore = function() {
-    return '\"Orcs are aggressive, callous, and domineering. Bullies by nature, they respect strength and power as the highest virtues. On an almost instinctive level, orcs believe they are entitled to anything they want unless someone stronger can stop them from seizing it.\"';
+    return '“兽人是有侵略性的，冷酷无情的，霸气的，他们尊重自己的力量和力量，几乎是本能的，兽人相信他们有权得到任何他们想要的东西，除非有更强的人可以阻止他们抓住它。”';
 };
 elf.lore = function() {
-    return '\"The long-lived elves are children of the natural world, similar in many superficial ways to fey creatures, though with key differences.\"';
+    return '“长寿精灵是自然世界的孩子，与许多肤浅的生物类似，尽管有着不同的关键区别。”';
 };
 halfing.lore = function() {
-    return '\"Optimistic and cheerful by nature, blessed with uncanny luck, and driven by a powerful wanderlust, halflings make up for their short stature with an abundance of bravado and curiosity.\"';
+    return '“天性乐观开朗，有着不可思议的运气，受到强大旅游的驱使，半身人充满了虚伪和好奇，弥补了自己矮小的身材。”';
 };
 sylph.lore = function() {
-    return '\"Born from the descendants of humans and beings of elemental air such as djinn, sylphs are a shy and reclusive race consumed by intense curiosity.\"';
+    return '“出生于人类的后裔和天神之类的元素生物，是一个害羞和神秘的种族，有着强烈的好奇心”。';
 };
 giant.lore = function() {
-    return '\"Their great size and strength lends them arguable advantages on the battlefield where they tower over their enemies. Dimwitted and slow moving, giants have use for neither speed nor intelligence, using brawn over brain to overcome obstacles.\"';
+    return '“他们身材高大，力量强大，使他们在战胜敌人的战场上占有优势，笨拙而缓慢的巨人们既无速度也无智慧，用脑筋来克服障碍。”';
 };
 var characterRaces = new Object();
 characterRaces.human = human;

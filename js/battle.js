@@ -1,4 +1,4 @@
-﻿//REWORKING IN PROGRESS
+//REWORKING IN PROGRESS
 function createBattleScreen(monster) {
     var html = "";
     var area = monster.area;
@@ -401,11 +401,11 @@ function monsterExperience(monsterStats) {
         player.properties.experience = player.properties.experience - player.properties.maxExperience;
         var maxExp = getTen(level);
         player.properties.maxExperience += maxExp * 10;
-        Log('<span id=\"levelUpLog\" style=\"color:blue;\" class =\"bold\">Level up!' + "<br />" + "</span>");
+        Log('<span id=\"levelUpLog\" style=\"color:blue;\" class =\"bold\">升级了！' + "<br />" + "</span>");
         levelUpLog();
     }
     else {
-        Log('<span id=\"expGain\" class =\"bold\">You gain:' + Math.floor(expGain) + " experience!" + "<br />" + "</span>");
+        Log('<span id=\"expGain\" class =\"bold\">你获得了' + Math.floor(expGain) + " 经验！" + "<br />" + "</span>");
     }
     monsterGold(monsterStats);
 };
