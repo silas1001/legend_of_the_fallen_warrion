@@ -1,6 +1,6 @@
-﻿
+
 body {
-	background-image: url("/images/bg.jpg");
+	background-image: url("../images/bg.jpg");
 	background-size: 100% auto;
 	background-color: #EDD26E;
 }
@@ -54,11 +54,7 @@ label > input { /* HIDE RADIO */
 		padding: 4px;
 		top: 8px;
 		left: 9px;
-		-webkit-border-radius: 8px;
-		-moz-border-radius: 8px;
 		border-radius: 8px;
-		-webkit-box-shadow: 0 6px 11px #000000;
-		-moz-box-shadow: 0 6px 11px #000000;
 		box-shadow: 0 6px 11px #000000;
 		overflow: hidden;
 	}
@@ -73,8 +69,6 @@ label > input { /* HIDE RADIO */
 		-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=35);
 		filter: alpha(opacity=35);
 		-webkit-transition: all 0.3s ease-out;
-		-moz-transition: all 0.3s ease-out;
-		-o-transition: all 0.3s ease-out;
 		transition: all 0.3s ease-out;
 	}
 
@@ -302,7 +296,6 @@ div.marginTest {
 .buttonDisable {
 	pointer-events: none;
 	filter: alpha(opacity=65);
-	-webkit-box-shadow: none;
 	box-shadow: none;
 	opacity: .65;
 }
