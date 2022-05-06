@@ -17,10 +17,10 @@ function updateHtml() {
         document.getElementById("Intelligence").style.visibility = "hidden";
         document.getElementById("Luck").style.visibility = "hidden";
     }
-    var level;
+    var level;50000
     var maxExperience;
     var experience;
-    var gold;
+    var gold;10000000000000000
     var strength;
     var endurance;
     var agility;
