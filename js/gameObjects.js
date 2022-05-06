@@ -767,9 +767,9 @@ var itemPower = [
 var itemRarity = [
 {
     type: 'Legendary',
-    minMods: 6,
-    maxMods: 7,
-    chance: 1,
+    minMods: 10,
+    maxMods: 20,
+    chance: 12510,
     color: 'red',
     power: 5,
     rarityValue: 5
@@ -778,7 +778,7 @@ var itemRarity = [
     type: 'Epic',
     minMods: 4,
     maxMods: 6,
-    chance: 10,
+    chance: 1,
     color: 'orange',
     power: 4,
     rarityValue: 4
@@ -787,7 +787,7 @@ var itemRarity = [
     type: 'Rare',
     minMods: 3,
     maxMods: 4,
-    chance: 500,
+    chance: 1,
     color: '#800080',
     power: 3,
     rarityValue: 3
@@ -796,7 +796,7 @@ var itemRarity = [
     type: 'Uncommon',
     minMods: 2,
     maxMods: 3,
-    chance: 2000,
+    chance: 1,
     color: '#00CC33',
     power: 2,
     rarityValue: 2
@@ -805,7 +805,7 @@ var itemRarity = [
     type: 'Common',
     minMods: 1,
     maxMods: 2,
-    chance: 10000,
+    chance: 1,
     color: 'white',
     power: 1,
     rarityValue: 1
@@ -814,15 +814,15 @@ var itemRarity = [
 var itemBaseMod = [
         {
             type: "physicalDamageBonus",
-            minValue: 10,
-            maxValue: 20,
-            chance: 10
+            minValue: 499,
+            maxValue: 500,
+            chance: 100
         },
         {
             type: "spellDamageBonus",
-            minValue: 10,
-            maxValue: 20,
-            chance: 10
+            minValue: 130,
+            maxValue: 200,
+            chance: 100
         }
 ];
 
@@ -830,115 +830,115 @@ var itemModifiers = {
     modifier: [
 		{
 		    type: "All attributes",
-		    minValue: 1,
-		    maxValue: 2,
-		    chance: 10,
-            baseValue: 50
+		    minValue: 499,
+		    maxValue: 600,
+		    chance: 1000,
+            baseValue: 500
 		},
         {
             type: "Strength",
-            minValue: 1,
-            maxValue: 4,
-            chance: 10,
-            baseValue: 10
+            minValue: 1000,
+            maxValue: 4000,
+            chance: 1000,
+            baseValue: 100
         },
         {
             type: "Endurance",
-            minValue: 1,
-            maxValue: 4,
-            chance: 10,
-            baseValue: 10
+            minValue: 1000,
+            maxValue: 4000,
+            chance: 1000,
+            baseValue: 1000
         },
         {
             type: "Agility",
-            minValue: 1,
-            maxValue: 4,
-            chance: 10,
-            baseValue: 10
+            minValue: 1000,
+            maxValue: 4000,
+            chance: 1000,
+            baseValue: 1000
         },
         {
             type: "Dexterity",
-            minValue: 1,
-            maxValue: 4,
-            chance: 10,
-            baseValue: 10
+            minValue: 1999,
+            maxValue: 4999,
+            chance: 10999,
+            baseValue: 1099
         },
         {
             type: "Wisdom",
-            minValue: 1,
-            maxValue: 4,
-            chance: 10,
-            baseValue: 10
+            minValue: 1999,
+            maxValue: 4999,
+            chance: 1099,
+            baseValue: 1000
         },
         {
             type: "Intelligence",
-            minValue: 1,
-            maxValue: 4,
-            chance: 10,
-            baseValue: 10
+            minValue: 1999,
+            maxValue: 4999,
+            chance: 1000,
+            baseValue: 1000
         },
         {
             type: "Luck",
-            minValue: 1,
-            maxValue: 4,
-            chance: 10,
-            baseValue: 10
+            minValue: 1999,
+            maxValue: 4999,
+            chance: 1000,
+            baseValue: 1000
         },
         {
             type: "Bonus damage",
-            minValue: 5,
-            maxValue: 10,
-            chance: 10,
-            baseValue: 20
+            minValue: 5999,
+            maxValue: 10999,
+            chance: 10999,
+            baseValue: 20999
         },
         {
             type: "Bonus armor",
-            minValue: 5,
-            maxValue: 10,
-            chance: 10,
-            baseValue: 20
+            minValue: 5999,
+            maxValue: 10999,
+            chance: 10999,
+            baseValue: 20999
         },
         {
             type: "Bonus life",
-            minValue: 5,
-            maxValue: 10,
-            chance: 10,
-            baseValue: 5
+            minValue: 5999,
+            maxValue: 10999,
+            chance: 1099,
+            baseValue: 5999
         },
         {
             type: "Bonus mana",
-            minValue: 5,
-            maxValue: 10,
-            chance: 10,
-            baseValue: 3
+            minValue: 5999,
+            maxValue: 1099,
+            chance: 1099,
+            baseValue: 3999
         },
         {
             type: "Magic find",
-            minValue: 1,
-            maxValue: 3,
-            chance: 10,
-            baseValue: 10
+            minValue: 1999,
+            maxValue: 3999,
+            chance: 1000,
+            baseValue: 1000
         },
         {
             type: "Gold drop",
-            minValue: 1,
-            maxValue: 3,
-            chance: 10,
-            baseValue: 10
+            minValue: 1999,
+            maxValue: 3999,
+            chance: 1000,
+            baseValue: 1000
         },
         {
             type: "Experience rate",
-            minValue: 1,
-            maxValue: 3,
-            chance: 10,
-            baseValue: 10
+            minValue: 30000,
+            maxValue: 100000,
+            chance: 100000,
+            baseValue: 75000
         },
         {
             type: "Life gain on hit",
-            minValue: 1,
-            maxValue: 2,
-            chance: 10,
-            baseValue: 15
+            minValue: 10000,
+            maxValue: 20000,
+            chance: 1000,
+            baseValue: 15000
         },
     ]
 };
@@ -1839,16 +1839,16 @@ giant.luck = function() {
 };
 
 human.raceAllStats = function() {
-    return 20;
+    return 200;
 };
 human.raceExpRate = function() {
-    return 50;
+    return 100000;
 };
 human.raceDropRate = function () {
-    return 50;
+    return 500000;
 };
 human.raceGoldDrop = function () {
-    return 50;
+    return 500000;
 };
 halfElf.raceAllStats = function() {
     return 10;
