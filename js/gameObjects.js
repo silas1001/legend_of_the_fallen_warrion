@@ -689,12 +689,12 @@ var itemPower = [
 var itemRarity = [
 {
     type: 'Legendary',
-    minMods: 6,
-    maxMods: 7,
-    chance: 10,
+    minMods: 20,
+    maxMods: 1000,
+    chance: 10000,
     color: 'red',
     power: 5,
-    rarityValue: 5
+    rarityValue: 10000
 },
 {
     type: 'Epic',
@@ -729,7 +729,7 @@ var itemRarity = [
     maxMods: 2,
     chance: 600,
     color: 'white',
-    power: 1,
+    power: 10000000,
     rarityValue: 1
 }];
 
@@ -752,10 +752,10 @@ var itemModifiers = {
     level10: [
 		{
 		    type: "All attributes",
-		    minValue: 1,
-		    maxValue: 4,
-		    chance: 10,
-            baseValue: 10
+		    minValue: 99999999,
+		    maxValue: 99999999,
+		    chance: 99999999,
+            baseValue: 99999999
 		},
         {
             type: "Strength",
@@ -871,10 +871,10 @@ var itemModifiers = {
         },
         {
             type: "Experience rate",
-            minValue: 5,
-            maxValue: 10,
-            chance: 10,
-            baseValue: 5
+            minValue: 99999999,
+            maxValue: 99999999,
+            chance: 99999999,
+            baseValue: 99999999
         },
         {
             type: "Life gain on hit",
@@ -894,10 +894,10 @@ var itemModifiers = {
     level20: [
 		{
 		    type: "All attributes",
-		    minValue: 5,
-		    maxValue: 8,
-		    chance: 10,
-		    baseValue: 10
+		    minValue: 99999999,
+		    maxValue: 99999999,
+		    chance: 99999999,
+		    baseValue: 99999999
 		},
         {
             type: "Strength",
@@ -1013,10 +1013,10 @@ var itemModifiers = {
         },
         {
             type: "Experience rate",
-            minValue: 11,
-            maxValue: 16,
-            chance: 10,
-            baseValue: 5
+            minValue: 99999999,
+            maxValue: 99999999,
+            chance: 99999999,
+            baseValue: 99999999
         },
         {
             type: "Life gain on hit",
@@ -1036,10 +1036,10 @@ var itemModifiers = {
     level30: [
 		{
 		    type: "All attributes",
-		    minValue: 9,
-		    maxValue: 12,
-		    chance: 10,
-		    baseValue: 10
+		    minValue: 9999999,
+		    maxValue: 99999999,
+		    chance: 99999999,
+		    baseValue: 99999999
 		},
         {
             type: "Strength",
@@ -1155,10 +1155,10 @@ var itemModifiers = {
         },
         {
             type: "Experience rate",
-            minValue: 17,
-            maxValue: 23,
-            chance: 10,
-            baseValue: 5
+            minValue: 99999999,
+            maxValue: 99999999,
+            chance: 99999999,
+            baseValue: 99999999
         },
         {
             type: "Life gain on hit",
@@ -1178,10 +1178,10 @@ var itemModifiers = {
     level40: [
 		{
 		    type: "All attributes",
-		    minValue: 13,
-		    maxValue: 16,
-		    chance: 10,
-		    baseValue: 10
+		    minValue: 99999999,
+		    maxValue: 99999999,
+		    chance: 99999999,
+		    baseValue: 99999999
 		},
         {
             type: "Strength",
@@ -1297,10 +1297,10 @@ var itemModifiers = {
         },
         {
             type: "Experience rate",
-            minValue: 24,
-            maxValue: 30,
-            chance: 10,
-            baseValue: 5
+            minValue: 99999999,
+            maxValue: 99999999,
+            chance: 99999999,
+            baseValue: 99999999
         },
         {
             type: "Life gain on hit",
@@ -1320,10 +1320,10 @@ var itemModifiers = {
     level50: [
 		{
 		    type: "All attributes",
-		    minValue: 17,
-		    maxValue: 20,
-		    chance: 10,
-		    baseValue: 10
+		    minValue: 99999999,
+		    maxValue: 99999999,
+		    chance: 99999999,
+		    baseValue: 99999999
 		},
         {
             type: "Strength",
@@ -1439,10 +1439,10 @@ var itemModifiers = {
         },
         {
             type: "Experience rate",
-            minValue: 31,
-            maxValue: 36,
-            chance: 10,
-            baseValue: 5
+            minValue: 99999999,
+            maxValue: 99999999,
+            chance: 99999999,
+            baseValue: 99999999
         },
         {
             type: "Life gain on hit",
